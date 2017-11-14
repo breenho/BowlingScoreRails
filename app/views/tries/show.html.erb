@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @try.name %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @try.score %>
+</p>
+
+<p>
+  <strong>Frame:</strong>
+  <%= @try.frame %>
+</p>
+
+<%= link_to 'Edit', edit_try_path(@try) %> |
+<%= link_to 'Back', tries_path %>
