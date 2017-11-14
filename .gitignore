@@ -3,6 +3,8 @@ capybara-*.html
 .rspec
 /log
 /tmp
+!/log/.keep
+!/tmp/.keep
 /db/*.sqlite3
 /db/*.sqlite3-journal
 /public/system
@@ -11,6 +13,13 @@ capybara-*.html
 *.orig
 rerun.txt
 pickle-email-*.html
+.ruby-*
+.secret
+.idea
+.DS_Store
+*.swp
+*~
+.project
 
 # TODO Comment out this rule if you are OK with secrets being uploaded to the repo
 config/initializers/secret_token.rb
@@ -27,7 +36,9 @@ config/initializers/secret_token.rb
 /vendor/bundle
 
 # these should all be checked in to normalize the environment:
-# Gemfile.lock, .ruby-version, .ruby-gemset
+Gemfile.lock
+.ruby-version 
+.ruby-gemset
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
@@ -42,3 +53,17 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_history
+
+
+# Ignore bundler config.
+/.bundle
+/.git
+
+#Ignore db schema file
+/db/schema.rb
+
+#Ignore database configuration file
+/config/database.yml
+
+#Ignore server configuration file
+/config/constants.yml
