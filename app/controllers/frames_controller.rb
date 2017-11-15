@@ -14,6 +14,7 @@ class FramesController < ApplicationController
 
   # GET /frames/new
   def new
+    p @game
     @frame = Frame.new
   end
 
