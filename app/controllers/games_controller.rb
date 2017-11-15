@@ -14,7 +14,8 @@ class GamesController < ApplicationController
 
   # GET /games/new
   def new
-    @game = Game.new
+    # @game = user.games.build(:name=>"Game #{user.game_count + 1}")
+    @game = Game.new(:name=>"Test", :user_id=>5)
   end
 
   # GET /games/1/edit
