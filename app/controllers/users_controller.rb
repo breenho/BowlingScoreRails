@@ -11,7 +11,6 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @game_name = "Game #{@user.try(:game_count) + 1}"
-    @game = @user.games.build(:name=>@game_name)
   end
 
   # GET /users/new

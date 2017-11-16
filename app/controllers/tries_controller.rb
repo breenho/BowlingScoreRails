@@ -14,7 +14,12 @@ class TriesController < ApplicationController
 
   # GET /tries/new
   def new
-    @try = Try.new
+    @user = User.find_by_id(params[:user_id])
+    @game = @user.games.create!(:name=>"Game #{@user.increment!(:game_count).try(:game_count)}")
+    
+    @frame = @game.frames.create!(:name=>"Frame 1")
+
+    @try = @frame.build_try
   end
 
   # GET /tries/1/edit

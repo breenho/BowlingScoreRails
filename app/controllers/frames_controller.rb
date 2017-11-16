@@ -13,9 +13,7 @@ class FramesController < ApplicationController
   end
 
   # GET /frames/new
-  def new
-    p @game
-    @frame = Frame.new
+  def new    
   end
 
   # GET /frames/1/edit
