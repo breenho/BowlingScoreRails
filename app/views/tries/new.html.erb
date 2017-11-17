@@ -1,5 +1,7 @@
-<h1>New Try</h1>
+<%="#{@frame.try(:name)}"%>
 
-<%= render 'form', try: @try %>
-
-<%= link_to 'Back', tries_path %>
+<%=form_for @try, method: :post do |f|%>
+  <%=f.label :try_name, :value=> "Enter #{@try.try(:try_name)} value"%>
+  <%=f.text_field :score%>
+  <%=f.submit "Submit"%>
+<%end%>

@@ -1,3 +1,3 @@
 class Try < ApplicationRecord
-  belongs_to :frame
+	belongs_to :frame
 end
