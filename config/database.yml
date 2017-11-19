@@ -11,5 +11,10 @@ development:
   database: bowling_score_development
 
 production:
-  <<: *default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: root
+  # socket: /var/run/mysqld/mysqld.sock
   database: bowling_score_production
