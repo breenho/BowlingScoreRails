@@ -53,5 +53,4 @@ class Try < ApplicationRecord
 	def self.is_value?(value)
 		value.to_i < 10
 	end
-
 end

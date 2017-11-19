@@ -100,22 +100,6 @@ function validate_try_2(this_obj){
 		msg_obj.html("Please enter only digits between 0 and 10");
 	}
 }
-// function validate_submit(argument) {
-// 	if ($("#submit").css("display") == "none")
-// 	{
-// 		alert("Please enter value for second try");
-// 		return false;
-// 	}
-// 	else
-// 	{
-// 		$("#new_try").submit();
-// 		// return true;
-// 	}
-// }
-
-// function click_submit() {
-// 	$("new_try").submit();
-// }
 function is_strike(){
 	return $('#try_try_1').val() == 10
 }
