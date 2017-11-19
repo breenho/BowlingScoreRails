@@ -10,9 +10,8 @@ development:
   database: bowling_score_development
 
 production:
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
-  pool: 5
-  username: root
-  password: root
+  username: postgres
+  password: postgres
   database: bowling_score_production
