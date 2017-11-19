@@ -11,11 +11,15 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
 
+$(window).load(function(){
+	$('#strike-submit').on('click',function(){
+		$('#new_try').submit()
+	});
+});
 // This is the function to validate the Try 1 text field based on either it is a strike or none.
 function validate_try_1(this_obj){
 	obj = $(this_obj);
@@ -34,7 +38,7 @@ function validate_try_1(this_obj){
 			}
 			else
 			{
-				enable_submit($('#submit'))
+				enable_submit($('#strike-submit'))
 			}
 		}	
 		else // If the frame is not the bonus frame, then we are checking if the hit is strike or not and done it's action accordingly.
@@ -42,13 +46,14 @@ function validate_try_1(this_obj){
 			if (is_strike())
 			{
 				msg_obj.html("Wow..!! It was a strike");
-				enable_submit($('#submit'))
+				enable_submit($('#strike-submit'))
 			}
 			else if(val < 10 && val >= 0) // Execute the following code if the it is not a strike
 			{
 				obj.hide();
 				msg_obj.hide();
 				$('#try_try_2').show();
+				$('#try_try_2').select();
 				$('#try_2_message').html(diff_of_try()+" pins left");
 			}
 			else
@@ -73,12 +78,12 @@ function validate_try_2(this_obj){
 		if (is_spare()) // If it is spare, the showing the msg and submit button to submit the values
 		{
 			msg_obj.html("Wow..!! It was a spare");
-			enable_submit($('#submit'))
+			enable_submit($('#strike-submit'))
 		}
 		// Need condition here for bonus hit
 		else if ($("#try_frame_id").val() == 11) // if the frame is a bonus one, and we are showing submit button to submit
 		{
-			enable_submit($('#submit'))
+			enable_submit($('#strike-submit'))
 			msg_obj.hide();
 		}
 		else // If it is not the bonus frame and the values are not spare, then submit the values to the database normally
@@ -86,7 +91,7 @@ function validate_try_2(this_obj){
 			if(val < diff_of_try() && val >= 0)
 			{
 				
-				enable_submit($('#submit'))
+				enable_submit($('#strike-submit'))
 				msg_obj.hide();
 			}
 			else
