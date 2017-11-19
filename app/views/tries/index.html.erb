@@ -1,1 +1,9 @@
-<%= link_to "Let's Enter to the game", new_try_path%>
+<h3>Welcome to Strike! A Bowling Point </h3>
+<%if @each_frames_score.present?%>
+	<%@each_frames_score.each do |frame_score|%>
+		<%=frame_score%> <br/>
+	<%end%>
+<%end%>
+<%= @final_total.present? ? "Your Overall Score is #{@final_total}" : ""%>
+<br/>
+<%= link_to "Let's Enter to the game", new_try_path(:frame_id=>1,:clear=>true)%>

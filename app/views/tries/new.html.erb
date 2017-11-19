@@ -1,7 +1,13 @@
-<%="#{@frame.try(:name)}"%>
+<%="#{@frame.name}"%>
 
 <%=form_for @try, method: :post do |f|%>
-  <%=f.label :try_name, :value=> "Enter #{@try.try(:try_name)} value"%>
-  <%=f.text_field :score%>
-  <%=f.submit "Submit"%>
+<!-- First Try -->
+		<%f.label :try_1, :type=> :number, :min=> 1, :max =>10, :value=>"Enter Try 1 value : "%><%=f.number_field :try_1, :onblur=>"validate_try_1(this);"%>
+	<span id="try_1_message"></span><br/>
+<!-- Second Try -->
+		<%f.label :try_2, :type=> :number, :min=> 1, :max =>10, :value=>"Enter Try 2 value : "%><%=f.number_field :try_2, :hidden => true, :onblur=>"validate_try_2(this);"%>
+	<span id="try_2_message"></span><br/>
+
+	<%=f.text_field :frame_id, :hidden=>true%>
+	<%=f.submit "Submit", :id=>"submit", :hidden=>true, :onclick=>""%>
 <%end%>
