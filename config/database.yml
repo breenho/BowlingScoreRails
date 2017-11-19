@@ -9,3 +9,7 @@ default: &default
 development:
   <<: *default
   database: bowling_score_development
+
+production:
+  <<: *default
+  database: bowling_score_production
