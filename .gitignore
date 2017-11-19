@@ -63,7 +63,7 @@ bower.json
 /db/schema.rb
 
 #Ignore database configuration file
-/config/database.yml
+#/config/database.yml
 
 #Ignore server configuration file
 /config/constants.yml
