@@ -9,6 +9,10 @@ development:
   <<: *default
   database: bowling_score_development
 
+test:
+  <<: *default
+  database: bowling_score_testing
+
 production:
   adapter: postgresql
   encoding: utf8
