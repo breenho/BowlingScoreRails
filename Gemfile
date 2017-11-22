@@ -41,6 +41,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'factory_girl_rails', '~> 4.5.0'
   gem 'selenium-webdriver'
+  gem 'rails-controller-testing'
 end
 
 group :development do
